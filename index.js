@@ -1,18 +1,17 @@
 "use strict";
 
-module.export = function( __dirname ) {
+module.exports = function( basedir ) {
 
 	var assign = require( "lodash.assign" );
 	var copyDir = require( "./lib/copyDir" );
 	var dirmap = require( "./lib/dirmap" );
 	var fs = require( "fs" );
-	var jade = require( "./lib/jade" );
+	var jade = require( "./lib/jade" )( basedir );
 	var min = require( "html-minifier").minify;
 	var path = require( "path" );
 	var template = require( "lodash.template" );
 	var sass = require( "node-sass" );
 
-	var basedir = __dirname + "/..";
 	var data = dirmap( basedir + "/layout/data", dirmap( basedir + "/data", {
 		basedir: basedir
 	} ) );
