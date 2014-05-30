@@ -9,8 +9,9 @@ module.exports = function( basedir ) {
 	var jade = require( "./lib/jade" )( basedir );
 	var min = require( "html-minifier").minify;
 	var path = require( "path" );
-	var template = require( "lodash.template" );
+	var rmDir = require( "./lib/rmDir" );
 	var sass = require( "node-sass" );
+	var template = require( "lodash.template" );
 
 	var data = dirmap( basedir + "/layout/data", dirmap( basedir + "/data", {
 		basedir: basedir
@@ -72,10 +73,11 @@ module.exports = function( basedir ) {
 				src: basedir + "/compiled-layout/resources",
 				dest: basedir + "/dist/resources"
 			} );
-			sass.render({
+			sass.render( {
 				file: basedir + "/compiled-layout/layout.scss",
 				success: function( css ) {
 					fs.writeFile( basedir + "/dist/layout.css", css );
+					rmDir( basedir + "/compiled-layout" );
 				},
 				error: function(error) {
 					console.error( error );
