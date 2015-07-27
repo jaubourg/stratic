@@ -1,26 +1,26 @@
 {
 	"name": "stratic",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"main": "./index.js",
 	"bin": "./bin.js",
 	"preferGlobal": true,
 	"dependencies": {
 		"html-minifier": "0.7.x",
-		"jade": "1.9.x",
-		"lodash.assign": "3.0.x",
-		"lodash.template": "3.3.x",
-		"markdown-it": "3.1.x",
-		"node-sass": "2.0.x",
-		"speakingurl": "0.13.x"
+		"jade": "1.11.x",
+		"lodash.assign": "3.2.x",
+		"lodash.template": "3.6.x",
+		"markdown-it": "4.4.x",
+		"node-sass": "3.2.x",
+		"speakingurl": "5.0.x"
 	},
 	"devDependencies": {
 		"coveralls": "2.11.x",
 		"grunt": "0.4.x",
 		"grunt-contrib-jshint": "0.11.x",
 		"grunt-jscoverage": "0.1.x",
-		"grunt-jscs": " 1.5.x",
+		"grunt-jscs": " 1.8.x",
 		"grunt-shell": "1.1.x",
-		"load-grunt-tasks": "3.1.x",
+		"load-grunt-tasks": "3.2.x",
 		"nodeunit": "0.9.x",
 		"wrench": "1.5.x"
 	},

@@ -107,14 +107,14 @@ module.exports = function( basedir ) {
 			} );
 			sass.render( {
 				file: basedir + "/compiled-layout/layout.scss",
-				success: function( result ) {
+				outputStyle: "compressed"
+			}, function( error, result ) {
+				if ( error ) {
+					console.error( error );
+				} else {
 					fs.writeFile( basedir + "/dist/layout.css", result.css );
 					rmDir( basedir + "/compiled-layout" );
-				},
-				error: function( error ) {
-					console.error( error );
-				},
-				outputStyle: "compressed"
+				}
 			} );
 		} );
 	} );
